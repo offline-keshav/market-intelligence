@@ -3,6 +3,7 @@ from scripts.fetch_sectors import fetch_sectors
 from analytics.market_metrics import calculate_market_metrics
 from analytics.sector_metrics import calculate_sector_metrics
 from analytics.signal_engine import generate_market_signals
+from analytics.sector_signal_engine import generate_sector_signals
 
 def run():
     fetch_nifty()
@@ -10,7 +11,8 @@ def run():
     calculate_market_metrics()
     calculate_sector_metrics()
     generate_market_signals()
-    print("Pipeline + analytics + signals completed")
+    generate_sector_signals()
+    print("Pipeline + analytics + market & sector signals completed")
 
 if __name__ == "__main__":
     run()
